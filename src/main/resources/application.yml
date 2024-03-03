@@ -1,0 +1,36 @@
+
+spring:
+  application:
+    name: INSO-APP
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/insoDB?createDatabaseIfNotExist=true
+    username: root
+    password: Asyst@123
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        globally_quote_identifiers: true
+        format_sql: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+    async:
+      request-timeout: 3600000
+server:
+  port: 8686
+  servlet:
+    context-path: /blog
+  error:
+    path: /blog/error
+    whitelabel:
+      enabled: false
